@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Cars</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="img/TEIXEIRA MOTORS.png" alt="Logo Super Cars" class="header__logo">
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li><a href="#" class="header__link">Lançamentos</a></li>
+          <li><a href="#" class="header__link">Clássicos</a></li>
+          <li><a href="#" class="header__link">Superesportivos</a></li>
+          <li><a href="#" class="header__link">SUVs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2 class="banner__title">Pronto para dominar as ruas?</h2>
+    <p class="banner__subtitle">Encontre o carro dos seus sonhos aqui!</p>
+    <input type="search" class="banner__search" placeholder="Qual será o seu próximo modelo?">
+  </section>
+
+  <section class="carousel">
+    <h2 class="carousel__title">Novos Lançamentos</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/carro1.png" alt="Carro Esportivo Vermelho"></div>
+        <div class="swiper-slide"><img src="img/carro2.png" alt="Carro Esportivo Branco"></div>
+        <div class="swiper-slide"><img src="img/carro3.png" alt="Carro Esportivo Preto"></div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__description">
+      <h3 class="card__title">Talvez você também se interesse por...</h3>
+      <h4 class="card__subtitle">Carros Elétricos</h4>
+      <p class="card__text">Experimente o futuro da tecnologia e performance com a Tesla.</p>
+      <img src="img/Design sem nome.png" alt="Carro Conceito XYZ" class="card__image">
+    </div>
+    <div class="card__buttons">
+      <button class="card__button" id="favoriteButton">Favoritar</button>
+      <button class="card__button" id="cartButton">Adicionar ao Carrinho</button>
+    </div>
+  </section>
+
+  <section class="subscribe">
+    <h2 class="subscribe__title">Receba as últimas novidades</h2>
+    <p class="subscribe__text">Inscreva-se para atualizações exclusivas sobre lançamentos e eventos</p>
+    <input type="email" placeholder="Cadastre seu e-mail" class="subscribe__email" id="emailInput" />
+    <button class="subscribe__button" id="subscribeButton">Inscrever-se</button>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__text">© 2024 Super Cars. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Biblioteca Swiper para o carrossel -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Inicializar o Swiper
+    const swiper = new Swiper(".swiper", {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // Função para Favoritar
+    document.getElementById("favoriteButton").addEventListener("click", () => {
+      alert("Carro adicionado aos favoritos!");
+    });
+
+    // Função para Adicionar ao Carrinho
+    document.getElementById("cartButton").addEventListener("click", () => {
+      alert("Carro adicionado ao carrinho!");
+    });
+
+    // Função para Validação de Email
+    document.getElementById("subscribeButton").addEventListener("click", () => {
+      const emailInput = document.getElementById("emailInput").value;
+      if (emailInput.includes("@") && emailInput.includes(".")) {
+        alert("Inscrição realizada com sucesso!");
+      } else {
+        alert("Por favor, insira um e-mail válido.");
+      }
+    });
+  </script>
+</body>
+</html>
